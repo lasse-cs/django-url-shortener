@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>URL Details for {{ short_url.slug }}</h1>
+    <p>Short URL: <a href="{{ short_url.get_redirect_url }}">{{ short_url.get_redirect_url }}</a></p>
+    <p>Original URL: <a href="{{ short_url.original_url }}">{{ short_url.original_url }}</a></p>
+    <p>Created at: {{ short_url.created_at }}</p>
+{% endblock content %}
