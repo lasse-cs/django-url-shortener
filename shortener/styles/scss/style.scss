@@ -1,0 +1,7 @@
+@use "pico" with (
+    $theme-color: "lime"
+);
+
+h1 {
+    color: var(--pico-primary);
+}
