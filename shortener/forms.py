@@ -4,16 +4,17 @@ from shortener.models import ShortenedURL
 
 
 class ShortenedURLForm(forms.ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.fields["original_url"].widget.attrs.update(
-            {
-                "placeholder": "Enter the URL to shorten",
-            }
-        )
+    template_name = "shortener/forms/url.html"
 
     class Meta:
         model = ShortenedURL
         fields = [
             "original_url",
         ]
+        widgets = {
+            "original_url": forms.URLInput(
+                attrs={
+                    "placeholder": "Enter the URL to shorten",
+                },
+            ),
+        }

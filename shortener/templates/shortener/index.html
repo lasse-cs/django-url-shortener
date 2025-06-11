@@ -5,7 +5,7 @@
     <h1>URL Shortener</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form }}
         <button type="submit">Shorten</button>
     </form>
 </main>

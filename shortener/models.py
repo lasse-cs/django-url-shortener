@@ -7,7 +7,7 @@ from tenacity import retry, stop_after_attempt
 
 class ShortenedURL(models.Model):
     slug = models.SlugField(max_length=8, primary_key=True)
-    original_url = models.URLField(max_length=2000)
+    original_url = models.URLField(max_length=2000, help_text="Original URL to shorten")
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
